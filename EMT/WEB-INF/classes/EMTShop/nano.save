@@ -1,0 +1,27 @@
+package EMTShop;
+
+
+public class Event {
+    public String eventid;
+    public String title;
+    public String description;
+    public int capacity;
+    public String location;
+    public Product(String eventid, String title ,String tickettype, double price,String custid){
+        this.ticketid = ticketid;
+        this.eventid = eventid;
+        this.tickettype = tickettype;
+        this.price = price;
+        this.custid = custid
+    }
+
+    public String toString() {
+        return name + "\t " + price;
+    }
+
+}
+
+
+
+
+
