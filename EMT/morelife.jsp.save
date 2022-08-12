@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" type="text/css" href="flyer.css"/>
+   <title>EMT Entertainment</title>
+</head>
+<body>
+  <div class="section-1">
+    <a href="EMT.html">
+       <img class="Logo" src="EMTLogo.png" alt="EMT Logo">
+     </a>
+     <a href="https://instagram.com/emt_entertainment?utm_medium=copy_link">
+        <img class="Insta" src="instagram.jpeg" alt="Instagram Logo">
+     </a>
+     <a href="https://www.youtube.com/channel/UCbGqh9UeYydlgRUklZtjqoQ">
+         <img class="Youtube" src="youtube.jpeg" alt="Youtube Logo">
+     </a>
+  </div>
+  <div class="topnav">
+    <ul>
+     <li><a  href="EMT.html">HOME</a></li>
+     <li><a  href="eventstickets.html">EVENTS & TICKETS</a>
+       <ul>
+         <li><a  href="nightlife.html">NIGHTLIFE & CONCERTS</a></li>
+         <li><a  href="seatedevents.html">SHOWS & SEATED EVENTS</a></li>
+         <li><a  href="sports.html">SPORTS</a></li>
+       </ul>
+     </li>
+     <li><a  href="#n">FASHION & LIFESTYLE</a></li>
+     <li><a  href="#n">MUSIC & FILM</a></li>
+     <li><a href="#Videos">PRIVATE BOOKINGS</a>
+       <ul>
+         <li><a  href="staycation.html">STAYCATIONS</a></li>
+         <li><a  href="#n">HOLIDAYS</a></li>
+         <li><a  href="#n">BIRTHDAYS</a></li>
+         <li><a  href="#n">CORPRATE EVENTS</a></li>
+       </ul>
+      </li>
+     <li><a href="#contact">ABOUT US</a></li>
+     </ul>
+  </div>
+  <div class="outside">
+     <div class= "blog">
+     <h1>EMT Presents: More Life the Silk Road shutdown:</h1>
+     <img class="flyer"src="flyer.jpg" alt= "flyer">
+     <div class="info">
+     <h2> Event Date: 21st November<br>
+          Time: 10:00PM-3:00AM<br>
+          Last Entry: 12:00AM<br>
+          More Info:</h2>
+      <p>Coming to you with a DJ Line up and Vibes like Never before<br>
+           <br>
+           <br>
+           Sounds on the night bro java.lang.NoSuchMethodError:ught to you by: DJ Suukz, DJ Kwarmz Original, DJ Larni and  DJ Dynamic  so make sure to bring your dancing shoes beause these tunes will do more than make you bop your head.<br>
+           <br>
+           Genre's on the night: R&B, Afrobeat, Hip Hop, UK Drill, Bashment and much, much more!!<br>
+           <br>
+           THIS EVENT WILL SELL OUT!! So be sure to purchase your tickets ASAP!!</p>
+     </div>
+     <div class="tickets">
+        <p>£5  Early-Bird(enter before 10:00pm to be valid)
+        <br>
+        <br>
+        £10 Standard Entry(enter before 12:00pm to be valid)
+        <br>
+        <br>
+        £15 Last Entry(enter before 12:00pm to be valid)
+        <br>
+        <br>
+        £30 VIP(enter before 12:00pm to be valid)</p>
+     <form class="VIP" method="POST" action="MLFEtickets.jsp">
+     <p>Ticket:<select size="1" name="time">
+       <option value="1"  selected="">Early-Bird</option>
+       <option value="2">Standard-Entry</option>
+       <option value="3">Late-Entry</option>
+       <option value="4">VIP</option>
+     </select> Quantity:<select size="1" name="amount">
+       <option selected="">1</option>
+       <option>2</option>
+       <option>3</option>
+     </se	lect> <input type="submit" value="add to basket" name="VIP1"> </p>
+    </form>
+    </div>
+     </div>
+  </div>
+  
