@@ -1,0 +1,84 @@
+<!doctype html>
+<html xmlns:th="https://thymeleaf.org"  lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thank you for your purchase</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/thank.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="12; url=/events" />
+</head>
+<body>
+  <video class="normal" autoplay muted>
+      <source  src="../static/images/checkmark.mp4" type="video/mp4" th:src="@{images/checkmark.mp4}">
+  </video>
+  <div class="slider">
+      <div class="slides">
+          <!--radio buttons start-->
+          <input type="radio" name="radio-btn" id="radio1">
+          <input type="radio" name="radio-btn" id="radio2">
+          <input type="radio" name="radio-btn" id="radio3">
+          <input type="radio" name="radio-btn" id="radio4">
+          <!--radio buttons end-->
+          <!--slide content start-->
+          <div class="slide first">
+              <img   src="../static/images/eventPics/5.JPG" alt="EMT Logo" th:src="@{images/eventPics/5.JPG}"/>
+          </div>
+          <div class="slide">
+              <img class="img-fluid"  src="../static/images/eventPics/6.JPG" alt="EMT Logo" th:src="@{images/eventPics/6.JPG}"/>
+          </div>
+          <div class="slide">
+              <img class="img-fluid"  src="../static/images/eventPics/7.JPG" alt="EMT Logo" th:src="@{images/eventPics/7.JPG}"/>
+          </div>
+          <div class="slide">
+              <img class="img-fluid"  src="../static/images/eventPics/8.JPG" alt="EMT Logo" th:src="@{images/eventPics/8.JPG}"/>
+          </div>
+          <!--slide content end-->
+          <!--auto nav start-->
+          <div class="navigation-auto">
+              <div class="auto-btn1"></div>
+              <div class="auto-btn2"></div>
+              <div class="auto-btn3"></div>
+              <div class="auto-btn4"></div>
+          </div>
+          <!--auto nav end-->
+
+      </div>
+      <!--manual nav start-->
+      <div class="navigation-manual">
+          <label for="radio1" class="manual-btn"></label>
+          <label for="radio2" class="manual-btn"></label>
+          <label for="radio3" class="manual-btn"></label>
+          <label for="radio4" class="manual-btn"></label>
+      </div>
+      <!--manual nav end-->
+  </div>
+  <div class="pickNroll"></div>
+<div class="finish container-fluid">
+    <div class="row d-flex justify-content-center" >
+        <img
+                th:src="@{images/EMTLogo.png}"
+                class="img-fluid shadow-2-strong"
+                alt="Palm Springs Road"
+                style="max-height: 350px; max-width: 400px;"
+        />
+    </div>
+    <div class="FinInfo">
+        <h1> Thank you for your purchase</h1>
+        <br>
+        <br>
+        <br>
+        <p> Now lets get lit!!</p>
+        <p> Ticket and Event details have been sent to you via the email provided</p>
+        <p> If you have not recieved a ticket in 20 mins contact us now</p>
+        <div class="col-12">
+            <a  th:href="@{events}" >Click here to go back to the homepage</a>
+        </div>
+    </div>
+
+</div>
+  <script src="/js/about.js"></script>
+
+</body>
+</html>

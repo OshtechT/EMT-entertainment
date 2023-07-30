@@ -1,0 +1,44 @@
+
+@keyframes fade-in{
+  from{
+    opacity:0;
+  }
+to{
+    opacity:1;
+  }
+}
+
+@keyframes fill{
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: #FFFFFF;
+    }
+
+}
+
+@keyframes fade-out{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+body{
+    background-color: #000000;
+}
+.normal{
+    opacity: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    fade-out: 0.5s ease forwards 5s;
+    z-index: 1;
+}
+.finish{
+    animation: fade-in 3s;
+    animation-delay: 6s;
+}

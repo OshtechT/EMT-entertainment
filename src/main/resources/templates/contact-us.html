@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/contact.css}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<section class="intro" style="background-color: #000000; overflow: auto;" >
+  <div class="bg-image h-100" >
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container" style="background-color: #000000;">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-7 col-xl-6">
+            <div class="card mask-custom">
+              <div class="card-body p-5 text-white">
+
+                <div class="my-4">
+
+                  <h2 class="text-center mb-5">Contact Us</h2>
+
+                  <form th:action="@{contact-us}" th:object="${form}">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row">
+                      <div class="col-12 col-md-6 mb-4">
+                        <div class="form-outline form-white">
+                          <input th:field="*{name}" type="text" id="form3Example1" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Example1">First name</label>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 mb-4">
+                        <div class="form-outline form-white">
+                          <input type="text" id="form3Example2" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Example2">Last name</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline form-white mb-4">
+                      <input  th:field="*{email}" type="email" id="form3Example3" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example3">Email address</label>
+                    </div>
+
+                    <!-- mobile input -->
+                    <div class="form-outline form-white mb-4">
+                      <input  th:field="*{mobile}"  type="number" id="form3Example4" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example4">mobile</label>
+                    </div>
+                    <!-- subject input -->
+                    <div class="form-outline form-white mb-4">
+                      <input  th:field="*{subject}"  type="text" id="form3Example5" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Example5">subject</label>
+                    </div>
+                    <!-- Info input -->
+                    <div  th:field="*{info}" class="form-outline form-white mb-4">
+                      <textarea type="text" id="form3Example6" class="form-control form-control-lg" rows="3" cols="50" >How can we be of service ...</textarea>
+                      <label class="form-label" for="form3Example6">Info</label>
+                    </div>
+
+                    <div class="d-flex justify-content-between pt-5">
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-light btn-block mb-4">Submit</button>
+
+                      <a th:href="@{events}" class="text-body"><i
+                              class="fas fa-long-arrow-alt-left me-2"></i>Back Home</a>
+                    </div>
+                  </form>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

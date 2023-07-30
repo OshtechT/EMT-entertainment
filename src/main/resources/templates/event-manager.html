@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin.css}">
+</head>
+<body>
+<div class="blog">
+    <h1> Welcome to the Admin Page</h1>
+    <p> List of events:</p>
+    <button  id="op" class="hidden event">
+        <h2> Create New Event </h2>
+        <img class="img-fluid" src="../static/images/EMTLogo.jpeg" alt="EMT Logo" th:src="@{images/EMTLogo.png}"/>
+    </button>
+    <div class= "modal-container" id="modal_contain">
+        <div class="modall">
+            <button id=clos class="X">X</button>
+            <h2> Create a new Event </h2>
+            <form id="createEvent" class="creEvent" method="POST" th:action="@{createEvent}" th:object="${ev}">
+                <label >Event Title:</label>
+                <input  type="text" name="title">
+                <br>
+                <label >Date:</label>
+                <input type="date" name="date">
+                <br>
+                <label >Venue:</label>
+                <input type="text" name="location">
+                <br>
+                <label >Address:</label>
+                <input type="text" name="street">
+                <br>
+                <label >Postcode:</label>
+                <input type="text" name="postcode">
+                <br>
+                <input type="submit" value="CREATE EVENT" name="createForm">
+            </form>
+
+        </div>
+    </div>
+    <div th:each=" event,iterStat :${events}" >
+        <button  th:id="'open'+${iterStat.index}" class="hidden event">
+            <h2 th:text="${event.title}"></h2>
+            <img class="flyer" th:src="@{${'images/' + event.title + '.jpg'}}"  alt= "flyer">
+        </button>
+        <form th:id="'form' + ${iterStat.index}" class="delEvent" method="POST" th:action="@{deleteEvent}" th:object="${ev}">
+            <input  type="hidden" name="title"th:value="${event.title}">
+            <input type="hidden" name="date"th:value="${event.date}">
+            <input type="hidden" name="location"th:value="${event.location}">
+            <input type="hidden" name="street"th:value="${event.street}">
+            <input type="hidden" name="postcode"th:value="${event.postcode}">
+            <input type="submit" value="DELETE EVENT" th:name="'form' + ${iterStat.index}">
+        </form>
+
+        <div class= "modal-container" th:id="'modal_container' + ${iterStat.index}">
+            <div class="modall">
+                <button th:id="'closer'+ ${iterStat.index}" class="X">X</button>
+                <h2>EMT Presents: <span th:text="${event.title}"></span>!</h2>
+                <img class="flyer" th:src="@{${'images/' + event.title + '.jpg'}}" alt= "flyer">
+                <p>Details</p>
+                <p th:text="'Date: ' + ${event.date}">
+                <p th:text="'Venue: ' + ${event.location}">
+                <p th:text="'Address: ' + ${event.street}">
+                <p th:text="'Postcode: ' + ${event.postcode}">
+                <form id="picForm" class="PicForm" method="POST" th:action="@{changePicture}"   enctype="multipart/form-data">
+                  <label >Change Picture:</label>
+                  <input type="file" id="pic" name="pic" accept="pic/jpg">
+                  <input  type="hidden" name="event"th:value="${event.title}">
+                  <input type="submit" value="Change Picture" name="pictureChange">
+                </form>
+
+                <div class="tickets">
+                     <p>List of tickets for event:</p>
+                    <div th:each=" ticket,iterStat :${tickets}" >
+                          <div th:if="${ticket.event == event.title}">
+                              <form class="editTickForm" method="POST" th:action="@{editTicket}" th:object="${tick}">
+                                  <label>TYPE:</label>
+                                  <input  type="hidden" name="type" th:value="${ticket.type}" th:text="${ticket.type}">
+
+                                  <input type="hidden" name="event"th:value="${ticket.event}">
+                                  <label >PRICE:</label>
+                                  <input type="number" name="price" th:placeholder="${ticket.price}" min="0" max="100" step="0.01" />
+                                  <label>ENTRY:</label>
+                                  <input type="time" name="entry" th:placeholder="${ticket.entry}" />
+                                  <label>LIMIT:</label>
+                                  <input type="number" name="limit" th:placeholder="${ticket.limit}" min="0"/>
+                                  <input type="submit" value="UPDATE TICKET" th:name="editTicket">
+
+                              </form>
+                          </div>
+                        <form th:if="${ticket.event == event.title}" id="ticketForm" class="delTicket" method="POST" th:action="@{deleteTicket}" th:object="${tick}">
+                            <input  type="hidden" name="type"th:value="${ticket.type}">
+                            <input type="hidden" name="entry"th:value="${ticket.entry}">
+                            <input type="hidden" name="event"th:value="${ticket.event}">
+                            <input type="hidden" name="price"th:value="${ticket.price}">
+                            <input type="hidden" name="limit"th:value="${ticket.limit}">
+                            <input type="submit" value="DELETE TICKET" th:name="ticketForm">
+                        </form>
+                              <!--                          <img class="trash" th:src="@{/images/trash.png}" alt="trash can">-->
+                    </div>
+                  <button onclick="showAddTickForm()">CREATE TICKET</button>
+                <form th:id="'createTicket'+${iterStat.index}" class="creTicket" method="POST" th:action="@{createTicket}" th:object="${tick}" style="display: none">
+                    <label >Ticket Tyoe:</label>
+                    <input  type="text" name="type">
+                    <br>
+                    <label >Last Entry:</label>
+                    <input type="time" name="entry">
+                    <br>
+                    <label >Price:</label>
+                    <input type="number" name="price" step="0.01" min="0" max="100">
+                    <br>
+<!--                    <label >Limit:</label>-->
+                    <input type="number" name="limit">
+                    <input type="hidden" name="event" th:value="${event.title}">
+                    <br>
+                    <input type="submit" value="CREATE TICKET" name="createTicketForm">
+                </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="/js/admin.js"></script>
+
+</body>
+
+</html>

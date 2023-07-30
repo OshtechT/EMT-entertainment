@@ -1,0 +1,213 @@
+html, body {
+    margin: 0;
+    width:100%;
+    height: 100%;
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+}
+@keyframes fade-in{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes fill{
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: #FFFFFF;
+    }
+
+}
+
+@keyframes fade-out{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+.hidden{
+    opacity:0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+.show{
+    opacity:1;
+    filter: blur(0);
+    transform: translateX(0);
+
+
+}
+.blog{
+    background-color:#282828;
+    width: 55%;
+    height: 100%;
+    overflow: auto;
+
+}
+h1{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    color: #FFFFFF;
+}
+p{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    color: #FFFFFF;
+}
+.event{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 150px;
+    height: 300px;
+    width: 300px;
+    margin:0px 15px 20px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    box-shadow:10px 10px 10px rgba(0,0,0,0.4);
+    min-width: 0;
+    background-color: #333333;
+}
+
+.creEvent{
+    color: #FFFFFF;
+    position: relative;
+    top:10%;
+    left:20px;
+}
+.delEvent {
+    position: relative;
+    left: 400px;
+}
+h2{
+    position: absolute;
+    top:10px;
+    color: #FFFFFF;
+    font-size: 12px;
+}
+.flyer{
+    position: absolute;
+    top: 30px;
+    width: 150px;
+    height: 230px;
+    box-shadow:10px 10px 10px rgba(0,0,0,0.4);
+}
+.modal-container{
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left:50%;
+    float:left;
+    display:flex;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+    background-color:rgba(0,0,0,0.7);
+    z-index:22;
+}
+.modal-container.show{
+    animation: fade-in 1s;
+    animation-fill-mode: both;
+    pointer-events: auto;
+    opacity: 1;
+}
+.modal-container.unshow{
+    animation: fade-out 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+
+}
+.modall{
+    position: fixed;
+    top: 20%;
+    background-color:#333333;
+    width: 450px;
+    height:500px;
+    overflow: scroll;
+}
+.modall h2{
+    posiiton:relative;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+.modall img{
+    position: relative;
+    top:40px;
+    left: 20px;
+}
+.modall p{
+    posiiton:relative;
+    left: 50%;
+    top: -200px;
+    font-size: 12px;
+}
+.PicForm{
+    color:#ffffff;
+    position: relative;
+    left: 10%;
+    top: -120px;
+
+}
+.tickets{
+    position: relative;
+    top: 100px;
+    left:-40%;
+}
+.TickInfo{
+     position: relative;
+     /*left:200px;*/
+     /*top: -215px;*/
+    color: #FFFFFF;
+ }
+.editTickForm{
+    position: relative;
+    left:200px;
+    top: -215px;
+    color: #FFFFFF;
+    width: 200px;
+}
+.editTickForm input[type=text], input[type=number]{
+    width: 150px;
+}
+.tickets button{
+   position: relative;
+    left:200px;
+    top: -215px;
+}
+.creTicket{
+    color:white;
+    position: relative;
+    left:200px;
+    top: -215px;
+}
+.delTicket{
+    position: relative;
+    left:400px;
+    top: -235px;
+
+}
+.X{
+    position: absolute;
+    top: 10px;
+    left: 420px;
+    width:5px;
+    height: 5px;
+    color: #FFFFFF;
+}

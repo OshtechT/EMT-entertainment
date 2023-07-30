@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" lang="eng">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/EMT3.css}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+
+<div class="section-1">
+  <a href="/events">
+    <img class="Logo" src="../static/images/EMTLogo.png" alt="EMT Logo" th:src="@{images/EMTLogo.png}"/>
+  </a>
+  <a href="https://instagram.com/emt_entertainment?utm_medium=copy_link">
+    <img class="Insta" src="../static/images/instagram.jpeg" alt="Instagram Logo" th:src="@{images/instagram.jpeg}">
+  </a>
+  <a href="https://www.youtube.com/channel/UCbGqh9UeYydlgRUklZtjqoQ">
+    <img class="Youtube" src="../static/images/youtube.jpeg" alt="Youtube Logo" th:src="@{images/youtube.jpeg}">
+  </a>
+  <a th:href="@{shopping-basket}">
+    <img class="Basket" src="../static//images/basket.png" alt="Basket Logo" th:src="@{images/basket.png}">
+  </a>
+  <div class="menu-button">
+    <div class="menu-button_burger"></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a  href="/events">HOME</a></li>
+            <!--    <button onclick="myFunction()" class="btn"> EVENTS & TICKETS</button>  -->
+            <li><a  href="/events">EVENTS & TICKETS</a>
+            </li>
+            <li><a  th:href="@{contact-us}">PRIVATE BOOKINGS</a>
+            </li>
+            <li><a  th:href="@{about-us}">ABOUT US</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="topnav">
+  <ul>
+    <li><a  href="/events">HOME</a></li>
+    <li><a  href="/events">EVENTS & TICKETS</a>
+    </li>
+    <li><a th:href="@{contact-us}">PRIVATE BOOKINGS</a>
+    </li>
+    <li><a  th:href="@{about-us}">ABOUT US</a></li>
+  </ul>
+</div>
+<div class="back container-fluid">
+  <img class="img-fluid bigLogo col-md-3 " src="../static/images/EMTLogo.png" alt="EMT Logo" th:src="@{images/EMTLogo.png}"/>
+  <h1 class="col-md-1">About Us</h1>
+  <p class="col-md-3">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+  <div class="slider col-sm-5">
+    <div class="slides">
+      <!--radio buttons start-->
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+      <!--radio buttons end-->
+      <!--slide content start-->
+      <div class="slide first">
+        <img   src="../static/images/eventPics/1.JPG" alt="EMT Logo" th:src="@{images/eventPics/1.JPG}"/>
+      </div>
+      <div class="slide">
+        <img class="img-fluid"  src="../static/images/eventPics/2.JPG" alt="EMT Logo" th:src="@{images/eventPics/2.JPG}"/>
+      </div>
+      <div class="slide">
+        <img class="img-fluid"  src="../static/images/eventPics/3.JPG" alt="EMT Logo" th:src="@{images/eventPics/3.JPG}"/>
+      </div>
+      <div class="slide">
+        <img class="img-fluid"  src="../static/images/eventPics/4.JPG" alt="EMT Logo" th:src="@{images/eventPics/4.JPG}"/>
+      </div>
+      <!--slide content end-->
+      <!--auto nav start-->
+      <div class="navigation-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+        <div class="auto-btn4"></div>
+      </div>
+      <!--auto nav end-->
+
+    </div>
+    <!--manual nav start-->
+    <div class="navigation-manual">
+      <label for="radio1" class="manual-btn"></label>
+      <label for="radio2" class="manual-btn"></label>
+      <label for="radio3" class="manual-btn"></label>
+      <label for="radio4" class="manual-btn"></label>
+    </div>
+    <!--manual nav end-->
+  </div>
+  <div class="pickNroll"></div>
+</div>
+<script src="/js/about.js"></script>
+</body>
+</html>
